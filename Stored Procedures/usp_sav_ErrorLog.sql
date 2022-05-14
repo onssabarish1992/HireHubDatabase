@@ -1,6 +1,6 @@
 ﻿-- =============================================
 -- Author:		Sabarish Nair
--- Create date: 1-April-2018
+-- Create date: 13-May-2022
 -- Description:	This stored procedure is used to save information about error logs
 -- =============================================
 CREATE PROCEDURE [dbo].[usp_sav_ErrorLog] 

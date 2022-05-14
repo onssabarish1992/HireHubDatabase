@@ -24,6 +24,8 @@ BEGIN
 
 		SELECT AU.[Id]
 		  ,AU.[UserName]
+		  ,AU.[FirstName]
+		  ,AU.[LastName]
 		  ,AU.[Email]
 		FROM [dbo].[AspNetUsers] AU
 		INNER JOIN [dbo].[AspNetUserRoles] AR

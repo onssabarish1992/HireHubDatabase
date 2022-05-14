@@ -15,6 +15,8 @@
 	[LockoutEnd] [datetimeoffset](7) NULL,
 	[LockoutEnabled] [bit] NOT NULL,
 	[AccessFailedCount] [int] NOT NULL,
+	[FirstName] [nvarchar](max) NOT NULL,
+	[LastName] [nvarchar](max) NOT NULL,
 	 CONSTRAINT [PK_AspNetUsers] PRIMARY KEY CLUSTERED 
 	(
 		[Id] ASC
