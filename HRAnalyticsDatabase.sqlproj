@@ -59,5 +59,15 @@
     <Folder Include="Tables" />
     <Folder Include="Functions" />
     <Folder Include="Stored Procedures" />
+    <Folder Include="Scripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\tbl_JobMaster.sql" />
+    <Build Include="Stored Procedures\usp_getJobDetails.sql" />
+    <Build Include="Tables\tbl_CandidateDetails.sql" />
+    <Build Include="Tables\tbl_CandidateInterviewSchedule.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\INSERTJOBMASTER.sql" />
   </ItemGroup>
 </Project>
