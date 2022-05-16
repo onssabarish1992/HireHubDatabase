@@ -4,7 +4,7 @@
 -- Description:	This stored procedure is used to get user information
 -- =============================================
 CREATE PROCEDURE usp_getAllUsers 
-	@UserType VARCHAR(10)
+	@UserType VARCHAR(20)
 AS
 BEGIN
 	BEGIN TRY
