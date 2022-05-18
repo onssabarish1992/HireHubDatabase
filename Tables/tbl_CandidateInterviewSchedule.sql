@@ -1,13 +1,11 @@
-﻿CREATE TABLE [dbo].[tbl_CandidateInterviewSchedule]
-(
-	 schedule_id INT NOT NULL IDENTITY(1, 1) PRIMARY KEY
-	,candidate_id INT NOT NULL FOREIGN KEY REFERENCES tbl_CandidateDetails(candidate_id)
+CREATE TABLE tbl_CandidateInterviewSchedule (
+	schedule_id INT NOT NULL IDENTITY(1, 1) PRIMARY KEY
+	,candidate_id INT NOT NULL FOREIGN KEY REFERENCES tbl_CandidateDetails(Candidate_details_id)
 	,job_id INT NOT NULL FOREIGN KEY REFERENCES tbl_JobMaster(job_id)
-	,project_name VARCHAR(100)
-	,interviewer_id NVARCHAR(450) NOT NULL
+	,interviewer_id INT NOT NULL FOREIGN KEY REFERENCES tbl_EmployeeMaster(emp_id)
 	,interview_timestamp DATETIME NOT NULL
 	,date_created DATETIME NOT NULL DEFAULT GETDATE()
 	,created_by NVARCHAR(450) NOT NULL
-	,date_modified DATETIME
+	,date_modified DATETIME DEFAULT GETDATE()
 	,modified_by NVARCHAR(450)
-)
+	);
