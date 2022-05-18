@@ -4,7 +4,7 @@ CREATE TABLE tbl_EmployeeMaster (
 	,emp_name VARCHAR(255) NOT NULL
 	,emp_designation VARCHAR(20) NOT NULL
 	,date_created DATETIME NOT NULL DEFAULT GETDATE()
-	,created_by INT NOT NULL
+	,created_by NVARCHAR(450) NOT NULL
 	,date_modified DATETIME DEFAULT GETDATE()
-	,modified_by INT
+	,modified_by NVARCHAR(450)
 	);
