@@ -68,6 +68,9 @@
     <Build Include="Tables\tbl_CandidateInterviewSchedule.sql" />
     <Build Include="Stored Procedures\usp_sav_interviewSchedule.sql" />
     <Build Include="Stored Procedures\usp_getInterviewerCandidates.sql" />
+    <Build Include="Stored Procedures\usp_getCandidateDetails.sql" />
+    <Build Include="Stored Procedures\tbl_SubCriteria.sql" />
+    <Build Include="Tables\tbl_CriteriaMaster.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\INSERTJOBMASTER.sql" />
