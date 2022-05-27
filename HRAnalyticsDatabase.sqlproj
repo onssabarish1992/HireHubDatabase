@@ -9,8 +9,7 @@
     <ProjectGuid>{5edef9d8-1de0-42ee-ba91-ae665df0281b}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
-    <RootPath>
-    </RootPath>
+    <RootPath />
     <RootNamespace>HRAnalyticsDatabase</RootNamespace>
     <AssemblyName>HRAnalyticsDatabase</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
@@ -48,7 +47,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
-    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
@@ -68,9 +66,8 @@
     <Build Include="Tables\tbl_CandidateInterviewSchedule.sql" />
     <Build Include="Stored Procedures\usp_sav_interviewSchedule.sql" />
     <Build Include="Stored Procedures\usp_getInterviewerCandidates.sql" />
-    <Build Include="Stored Procedures\usp_getCandidateDetails.sql" />
-    <Build Include="Stored Procedures\tbl_SubCriteria.sql" />
-    <Build Include="Tables\tbl_CriteriaMaster.sql" />
+    <Build Include="Stored Procedures\usp_sav_SubCriteria.sql" />
+    <Build Include="Stored Procedures\usp_getEvaluationCriteria.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\INSERTJOBMASTER.sql" />
