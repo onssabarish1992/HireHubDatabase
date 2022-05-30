@@ -1,4 +1,4 @@
--- =============================================
+﻿-- =============================================
 -- Author:		Kishore Valavan
 -- Create date: 21-May-2022
 -- Description:	This stored procedure is used to get details from Job Criteria
@@ -18,7 +18,7 @@ BEGIN
 			,[position_count]
 			,[job_description]
 			,[compensation]
-		FROM [HRAnalytics].[dbo].[tbl_JobCriteria]
+		FROM [dbo].[tbl_JobCriteria]
 	END TRY
 
 	BEGIN CATCH

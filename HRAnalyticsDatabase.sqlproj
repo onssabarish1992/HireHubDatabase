@@ -68,8 +68,30 @@
     <Build Include="Stored Procedures\usp_getInterviewerCandidates.sql" />
     <Build Include="Stored Procedures\usp_sav_SubCriteria.sql" />
     <Build Include="Stored Procedures\usp_getEvaluationCriteria.sql" />
+    <Build Include="Tables\AspNetRoleClaims.sql" />
+    <Build Include="Tables\AspNetRoles.sql" />
+    <Build Include="Tables\AspNetUserClaims.sql" />
+    <Build Include="Tables\AspNetUserLogins.sql" />
+    <Build Include="Tables\AspNetUserRoles.sql" />
+    <Build Include="Tables\tbl_CandidateEvaluation.sql" />
+    <Build Include="Tables\tbl_CriteriaMaster.sql" />
+    <Build Include="Tables\tbl_CandidateGlobalScores.sql" />
+    <Build Include="Tables\Tbl_ErrorLogs.sql" />
+    <Build Include="Tables\tbl_JobCriteria.sql" />
+    <Build Include="Tables\tbl_SubCriteria.sql" />
+    <Build Include="Stored Procedures\usp_get_JobCriteria.sql" />
+    <Build Include="Stored Procedures\usp_getAllUsers.sql" />
+    <Build Include="Stored Procedures\usp_getCandidateDetails.sql" />
+    <Build Include="Tables\AspNetUsers.sql" />
+    <Build Include="Stored Procedures\usp_sav_ErrorLog.sql" />
+    <Build Include="Stored Procedures\usp_getCriteriasForJob.sql" />
+    <Build Include="Stored Procedures\usp_sav_JobCriteria.sql" />
+    <Build Include="Tables\AspNetUserTokens.sql" />
+    <Build Include="Tables\tbl_JobCriteriaMapping.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\INSERTJOBMASTER.sql" />
+    <None Include="Scripts\INSERT_CRITERIA_MAPPING.sql" />
+    <None Include="Scripts\INSERT_CRITERIA_MASTER.sql" />
   </ItemGroup>
 </Project>

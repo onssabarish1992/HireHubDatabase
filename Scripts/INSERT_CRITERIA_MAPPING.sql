@@ -1,4 +1,4 @@
-
+﻿
 -- insert into criteria mapping
 -- first row
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 

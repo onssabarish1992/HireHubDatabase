@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[tbl_SubCriteria]
 (
-	 sub_criteria_id INT NOT NULL IDENTITY(1, 1) PRIMARY KEY
+	sub_criteria_id INT NOT NULL IDENTITY(1, 1) PRIMARY KEY
 	,job_id INT NOT NULL FOREIGN KEY REFERENCES tbl_JobMaster(job_id)
 	,criteria_id INT NOT NULL FOREIGN KEY REFERENCES tbl_CriteriaMaster(criteria_id)
 	,sub_criteria_description VARCHAR(450)

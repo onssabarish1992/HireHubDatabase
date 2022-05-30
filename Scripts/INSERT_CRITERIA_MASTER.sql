@@ -1,4 +1,4 @@
-
+﻿
 IF NOT EXISTS(SELECT 1 FROM [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'EXPERIENCE')
 BEGIN
 INSERT INTO [dbo].[tbl_CriteriaMaster]

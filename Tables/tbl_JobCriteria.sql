@@ -1,4 +1,5 @@
-CREATE TABLE tbl_JobCriteria (
+﻿CREATE TABLE [dbo].[tbl_JobCriteria]
+(
 	job_criteria_id INT NOT NULL IDENTITY(1, 1) PRIMARY KEY
 	,job_id INT NOT NULL FOREIGN KEY REFERENCES tbl_JobMaster(job_id)
 	,compensation DECIMAL(18,5) NOT NULL 
@@ -11,4 +12,4 @@ CREATE TABLE tbl_JobCriteria (
 	,created_by NVARCHAR(450) NOT NULL
 	,date_modified DATETIME DEFAULT GETDATE()
 	,modified_by NVARCHAR(450)
-	);
+)

@@ -1,6 +1,7 @@
-CREATE TABLE tbl_CandidateGlobalScores (
+﻿CREATE TABLE [dbo].[tbl_CandidateGlobalScores]
+(
 	global_score_id INT NOT NULL IDENTITY(1, 1) PRIMARY KEY
-	,candidate_id INT NOT NULL FOREIGN KEY REFERENCES tbl_CandidateDetails(Candidate_details_id)
+	,candidate_id INT NOT NULL FOREIGN KEY REFERENCES tbl_CandidateDetails(candidate_id)
 	,schedule_id INT NOT NULL FOREIGN KEY REFERENCES tbl_CandidateInterviewSchedule(schedule_id)
 	,job_id INT NOT NULL FOREIGN KEY REFERENCES tbl_JobMaster(job_id)
 	,is_hired BIT NOT NULL
@@ -10,4 +11,4 @@ CREATE TABLE tbl_CandidateGlobalScores (
 	,created_by NVARCHAR(450) NOT NULL
 	,date_modified DATETIME DEFAULT GETDATE()
 	,modified_by NVARCHAR(450)
-	);
+)

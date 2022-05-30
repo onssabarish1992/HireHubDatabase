@@ -1,4 +1,4 @@
--- =============================================
+﻿-- =============================================
 -- Author:		Kishore Valavan
 -- Create date: 21-May-2022
 -- Description:	This stored procedure is used to insert role criteria information into Job Criteria
@@ -7,7 +7,6 @@ CREATE PROCEDURE [dbo].[usp_sav_JobCriteria]
 	@JobRole INT,
 	@Position INT,
 	@Compensation DECIMAL(18,5),
-    @is_Active BIT,
     @JobDescription VARCHAR(450),
     @ClosingDate DATETIME
 AS
@@ -36,7 +35,7 @@ BEGIN
                 ,@JobDescription
                 ,@Position
                 ,@ClosingDate
-                ,@is_Active
+                ,1
                 ,GETDATE()
                 ,'ADMIN');
     END TRY

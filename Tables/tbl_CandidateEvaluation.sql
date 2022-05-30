@@ -1,4 +1,5 @@
-CREATE TABLE tbl_CandidateEvaluation (
+﻿CREATE TABLE [dbo].[tbl_CandidateEvaluation]
+(
 	 evaluation_id INT NOT NULL IDENTITY(1, 1) PRIMARY KEY
 	,schedule_id INT NOT NULL FOREIGN KEY REFERENCES tbl_CandidateInterviewSchedule(schedule_id)
 	,job_id INT NOT NULL FOREIGN KEY REFERENCES tbl_JobMaster(job_id)
@@ -9,4 +10,4 @@ CREATE TABLE tbl_CandidateEvaluation (
 	,created_by NVARCHAR(450) NOT NULL
 	,date_modified DATETIME NULL
 	,modified_by NVARCHAR(450)
-	);
+)
