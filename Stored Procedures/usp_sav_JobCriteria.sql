@@ -4,11 +4,11 @@
 -- Description:	This stored procedure is used to insert role criteria information into Job Criteria
 -- =============================================
 CREATE PROCEDURE [dbo].[usp_sav_JobCriteria] 
-	@JobRole INT,
+	@job_id INT,
 	@Position INT,
 	@Compensation DECIMAL(18,5),
     @JobDescription VARCHAR(450),
-    @ClosingDate DATETIME
+    @ClosingDate DATETIME NULL
 AS
 BEGIN
 
@@ -30,7 +30,7 @@ BEGIN
                 ,[date_created]
                 ,[created_by])
             VALUES
-                (@JobRole
+                (@job_id
                 ,@Compensation
                 ,@JobDescription
                 ,@Position
@@ -53,6 +53,11 @@ BEGIN
 			ELSE
 			BEGIN
 				-- Save error to log table
+				SET	@Params='@job_id='+CONVERT(NVARCHAR(MAX),@job_id)+
+						' | @Position ='+CONVERT(NVARCHAR(MAX),@Position)+
+						' | @Compensation ='+CONVERT(NVARCHAR(MAX),@Compensation)+
+						' | @JobDescription ='+CONVERT(NVARCHAR(MAX),@JobDescription)+
+						' | @ClosingDate ='+CONVERT(NVARCHAR(MAX),@ClosingDate);
 				EXEC usp_sav_ErrorLog @StackTrace,'usp_sav_JobCriteria',@Params;
 			END
 	END CATCH

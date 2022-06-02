@@ -14,11 +14,15 @@ BEGIN
 			,@StackTrace NVARCHAR(MAX)
 			,@Params NVARCHAR(MAX);
 
-		SELECT [job_id]
+		SELECT JM.[job_id]
 			,[position_count]
-			,[job_description]
+			,JC.[job_description]
 			,[compensation]
-		FROM [dbo].[tbl_JobCriteria]
+			,JM.[job_name]
+			,JC.[closing_date]
+		FROM [dbo].[tbl_JobCriteria] JC
+		INNER JOIN [dbo].[tbl_JobMaster] JM
+			ON JC.job_id = JM.job_id
 	END TRY
 
 	BEGIN CATCH
