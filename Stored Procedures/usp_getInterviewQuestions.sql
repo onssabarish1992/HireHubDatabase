@@ -14,17 +14,24 @@ BEGIN
 			@ErrorState INT,  
 			@StackTrace NVARCHAR(MAX),
 			@Params NVARCHAR(MAX),
-			@job_id INT;
+			@job_id INT,
+			@is_candidaterated BIT;
 
 		SELECT @job_id = job_id
 		FROM tbl_CandidateInterviewSchedule
 		WHERE schedule_id = @ScheduleID
 
+		IF EXISTS (SELECT 1 FROM [tbl_CandidateEvaluation] WHERE schedule_id = @ScheduleID)
+		BEGIN
+			SET @is_candidaterated = 1
+		END
+
 		SELECT CIS.schedule_id,
 			   CIS.candidate_id,
 			   CIS.job_id,
 			   JM.job_name,
-			   CD.candidate_name
+			   CD.candidate_name,
+			   @is_candidaterated AS is_candidate_rated
 		FROM tbl_CandidateInterviewSchedule CIS
 		INNER JOIN tbl_JobMaster JM
 			ON JM.job_id = CIS.job_id
