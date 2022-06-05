@@ -88,6 +88,8 @@
     <Build Include="Stored Procedures\usp_sav_JobCriteria.sql" />
     <Build Include="Tables\AspNetUserTokens.sql" />
     <Build Include="Tables\tbl_JobCriteriaMapping.sql" />
+    <Build Include="Stored Procedures\usp_getInterviewQuestions.sql" />
+    <Build Include="Stored Procedures\usp_sav_InterviewRatings.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\INSERTJOBMASTER.sql" />
