@@ -20,6 +20,7 @@ BEGIN
 			,[compensation]
 			,JM.[job_name]
 			,JC.[closing_date]
+			,JC.weightage
 		FROM [dbo].[tbl_JobCriteria] JC
 		INNER JOIN [dbo].[tbl_JobMaster] JM
 			ON JC.job_id = JM.job_id
