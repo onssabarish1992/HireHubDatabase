@@ -9,15 +9,15 @@ BEGIN
  BEGIN TRY  
  SET NOCOUNT ON;  
   DECLARE @ErrorSeverity INT,  
-   @ErrorState INT,    
-   @StackTrace NVARCHAR(MAX),  
-   @Params NVARCHAR(MAX);  
+		   @ErrorState INT,    
+		   @StackTrace NVARCHAR(MAX),  
+		   @Params NVARCHAR(MAX);  
   
-   SELECT  
-     JM.job_name  
-    ,CM.criteria_name  
-    ,CM.date_created
-	,SC.sub_criteria_description
+   SELECT   JM.job_name  
+			,CM.criteria_name  
+			,CM.date_created
+			,SC.sub_criteria_description
+			,SC.weightage
    FROM [dbo].[tbl_CriteriaMaster] CM  
    INNER JOIN [dbo].[tbl_SubCriteria] SC  
     ON CM.criteria_ID = SC.criteria_ID  
@@ -26,6 +26,7 @@ BEGIN
   
  END TRY  
  BEGIN CATCH  
+
   SET @ErrorSeverity = ERROR_SEVERITY();    
   SET @ErrorState = ERROR_STATE();    
   SET @StackTrace = ERROR_MESSAGE();  
@@ -33,12 +34,12 @@ BEGIN
   
   IF(ERROR_NUMBER()=50000) -- User defined error  
   BEGIN  
-  RAISERROR(@StackTrace, @ErrorSeverity, @ErrorState);    
+	RAISERROR(@StackTrace, @ErrorSeverity, @ErrorState);    
   END  
   ELSE  
-  BEGIN  
-  -- Save error to log table  
-  EXEC usp_sav_ErrorLog @StackTrace,'usp_getEvaluationCriteria',@Params;  
-  END  
+	BEGIN  
+		-- Save error to log table  
+		EXEC usp_sav_ErrorLog @StackTrace,'usp_getEvaluationCriteria',@Params;  
+	END  
  END CATCH  
-END  
+END
