@@ -1,4 +1,8 @@
-
+-- =============================================
+-- Author:	Kishore Valavan
+-- Create date: 23-June-2022
+-- Description:	This stored procedure is used to insert into the JObMaster table
+-- =============================================
 
 IF NOT EXISTS (SELECT 1 FROM [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER') 
 BEGIN
