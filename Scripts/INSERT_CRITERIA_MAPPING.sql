@@ -1,4 +1,9 @@
-﻿
+-- =============================================
+-- Author:	KISHORE VALAVAN	
+-- Create date: 23-June-2022
+-- Description:	This SCRIPT is used to insert into the CriteriaMapping table
+-- =============================================
+
 -- insert into criteria mapping
 -- first row
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
@@ -33,36 +38,6 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')) 
-BEGIN
-	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
-	[job_id]
-	,[criteria_id]
-	,[date_created]
-	,[created_by]
-	,[date_modified]
-	,[modified_by]
-	)
-VALUES (
-    (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')
-	,GETDATE()
-	,'ADMIN'
-	,NULL
-	,NULL
-	)
-
-     PRINT 'Record inserted successfully...'
-END
-ELSE
-BEGIN
-    PRINT 'Record already exists...'
-END
-
--- third row
-
-IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
-		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
 		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'COMMUNICATION')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
@@ -89,11 +64,11 @@ BEGIN
     PRINT 'Record already exists...'
 END
 
--- fourth row
+-- third row
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SQL')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'RISK ASSESMENT')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -105,7 +80,37 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SQL')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'RISK ASSESMENT')
+	,GETDATE()
+	,'ADMIN'
+	,NULL
+	,NULL
+	)
+
+     PRINT 'Record inserted successfully...'
+END
+ELSE
+BEGIN
+    PRINT 'Record already exists...'
+END
+
+-- fourth row
+
+IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
+		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'LEADERSHIP')) 
+BEGIN
+	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
+	[job_id]
+	,[criteria_id]
+	,[date_created]
+	,[created_by]
+	,[date_modified]
+	,[modified_by]
+	)
+VALUES (
+    (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'LEADERSHIP')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -122,7 +127,7 @@ END
 -- fifth row
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'PMP® CERTIFICATION')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -134,7 +139,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PROJECT MANAGER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'PMP® CERTIFICATION')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -181,7 +186,7 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PRODUCT OWNER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'NEGOTIATION')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -193,7 +198,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PRODUCT OWNER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'NEGOTIATION')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -241,7 +246,7 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PRODUCT OWNER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SQL')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'UML MODELLING')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -253,7 +258,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PRODUCT OWNER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SQL')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'UML MODELLING')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -270,7 +275,7 @@ END
 -- ten row
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PRODUCT OWNER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'AGILE METHODOLOGY')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -282,7 +287,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'PRODUCT OWNER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'AGILE METHODOLOGY')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -329,7 +334,7 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'BUSINESS ANALYST')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'VISUALIZATION')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -341,7 +346,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'BUSINESS ANALYST')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'VISUALIZATION')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -389,7 +394,7 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'BUSINESS ANALYST')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SQL')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'PROTOTYPING')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -401,7 +406,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'BUSINESS ANALYST')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SQL')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'PROTOTYPING')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -418,7 +423,7 @@ END
 -- 15 row
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'BUSINESS ANALYST')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'CBAP® Certification')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -430,7 +435,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'BUSINESS ANALYST')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'CBAP® Certification')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -477,7 +482,7 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SR. SOFTWARE TESTER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'ANALYTICAL SKILLS')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -489,7 +494,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SR. SOFTWARE TESTER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'ANALYTICAL SKILLS')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -507,7 +512,7 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SR. SOFTWARE TESTER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'COMMUNICATION')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'JIRA')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -519,7 +524,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SR. SOFTWARE TESTER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'COMMUNICATION')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'JIRA')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -537,7 +542,7 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SR. SOFTWARE TESTER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SQL')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SELENIUM')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -549,7 +554,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SR. SOFTWARE TESTER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SQL')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SELENIUM')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -566,7 +571,7 @@ END
 -- 20 row
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SR. SOFTWARE TESTER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SDLC')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -578,7 +583,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SR. SOFTWARE TESTER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SDLC')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -625,7 +630,7 @@ END
 
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SOFTWARE DEVELOPER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'PROBLEM SOLVING')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -637,7 +642,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SOFTWARE DEVELOPER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SALARY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'PROBLEM SOLVING')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -654,7 +659,7 @@ END
 -- 23 row
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SOFTWARE DEVELOPER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'COMMUNICATION')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'DOT NET')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -666,7 +671,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SOFTWARE DEVELOPER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'COMMUNICATION')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'DOT NET')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -713,7 +718,7 @@ END
 -- 25 row
 IF NOT EXISTS (SELECT 1 FROM tbl_JobCriteriaMapping 
 		 where job_id = (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SOFTWARE DEVELOPER')
-		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')) 
+		 and criteria_id = (SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'AGILE METHODOLOGY')) 
 BEGIN
 	INSERT INTO [dbo].[tbl_JobCriteriaMapping] (
 	[job_id]
@@ -725,7 +730,7 @@ BEGIN
 	)
 VALUES (
     (SELECT job_id from [dbo].[tbl_JobMaster] WHERE UPPER(job_name) = 'SOFTWARE DEVELOPER')
-	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'SYNERGY')
+	,(SELECT criteria_id from [dbo].[tbl_CriteriaMaster] WHERE UPPER(criteria_name) = 'AGILE METHODOLOGY')
 	,GETDATE()
 	,'ADMIN'
 	,NULL
@@ -738,3 +743,8 @@ ELSE
 BEGIN
     PRINT 'Record already exists...'
 END
+
+
+
+
+
