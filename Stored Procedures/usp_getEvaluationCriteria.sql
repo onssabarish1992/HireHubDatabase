@@ -13,11 +13,14 @@ BEGIN
 		   @StackTrace NVARCHAR(MAX),  
 		   @Params NVARCHAR(MAX);  
   
-   SELECT   JM.job_name  
+   SELECT   SC.sub_criteria_id
+			,JM.job_name  
 			,CM.criteria_name  
 			,CM.date_created
 			,SC.sub_criteria_description
 			,SC.weightage
+			,JM.job_id
+			,CM.criteria_id
    FROM [dbo].[tbl_CriteriaMaster] CM  
    INNER JOIN [dbo].[tbl_SubCriteria] SC  
     ON CM.criteria_ID = SC.criteria_ID  

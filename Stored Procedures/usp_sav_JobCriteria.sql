@@ -1,7 +1,3 @@
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 -- =============================================
 -- Author:		Kishore Valavan
 -- Create date: 21-May-2022
@@ -89,4 +85,3 @@ BEGIN
 	END CATCH
     
 END
-GO

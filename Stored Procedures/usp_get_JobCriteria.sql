@@ -14,7 +14,8 @@ BEGIN
 			,@StackTrace NVARCHAR(MAX)
 			,@Params NVARCHAR(MAX);
 
-		SELECT JM.[job_id]
+		SELECT job_criteria_id 
+            ,JM.[job_id]
 			,[position_count]
 			,JC.[job_description]
 			,[compensation]

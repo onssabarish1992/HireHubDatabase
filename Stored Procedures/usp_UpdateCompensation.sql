@@ -1,11 +1,7 @@
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
--- =============================================
--- Author:		Kishore Valavan
--- Create date: 15-June-2022
--- Description:	This stored procedure is used to update table
+﻿-- =============================================
+-- Author:		Sabarish Nair
+-- Create date: 04-June-2022
+-- Description:	This stored procedure is used to fetch the questions for interview
 -- =============================================
 CREATE PROCEDURE [dbo].[usp_UpdateCompensation]
     @actual_compensation DECIMAL(18, 5),
@@ -53,8 +49,3 @@ BEGIN
 	END CATCH
 
 END
-
-
-
--- exec [dbo].[usp_UpdateCompensation] 'jkask'
-GO

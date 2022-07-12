@@ -1,8 +1,4 @@
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
--- =============================================
+﻿-- =============================================
 -- Author:		Kishore Valavan
 -- Create date: 10-June-2022
 -- Description:	This stored procedure is used to save global scores
@@ -20,6 +16,11 @@ BEGIN
 			@ErrorState INT,  
 			@StackTrace NVARCHAR(MAX),
 			@Params NVARCHAR(MAX);
+
+			IF EXISTS (SELECT 1 FROM [dbo].[tbl_CandidateGlobalScores])
+			BEGIN
+				DELETE FROM [dbo].[tbl_CandidateGlobalScores]
+			END
 
 			DECLARE @temp_GlobalScore AS TABLE(candidate_id INT, 
 											   schedule_id INT,
@@ -108,4 +109,3 @@ BEGIN
 	END CATCH
     
 END
-GO

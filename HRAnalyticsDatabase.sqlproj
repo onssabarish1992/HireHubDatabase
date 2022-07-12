@@ -90,10 +90,21 @@
     <Build Include="Tables\tbl_JobCriteriaMapping.sql" />
     <Build Include="Stored Procedures\usp_getInterviewQuestions.sql" />
     <Build Include="Stored Procedures\usp_sav_InterviewRatings.sql" />
+    <Build Include="Tables\tbl_AHPPairs.sql" />
+    <Build Include="Tables\tbl_EntityMaster.sql" />
+    <Build Include="Stored Procedures\usp_getAHPPairs.sql" />
+    <Build Include="Stored Procedures\usp_getAllCandidateRatings.sql" />
+    <Build Include="Stored Procedures\usp_getGlobalScores.sql" />
+    <Build Include="Stored Procedures\usp_sav_AHPFinalScores.sql" />
+    <Build Include="Stored Procedures\usp_sav_AHPPairs.sql" />
+    <Build Include="Stored Procedures\usp_sav_AHPWeightage.sql" />
+    <Build Include="Stored Procedures\usp_sav_GlobalScores.sql" />
+    <Build Include="Stored Procedures\usp_UpdateCompensation.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\INSERTJOBMASTER.sql" />
     <None Include="Scripts\INSERT_CRITERIA_MAPPING.sql" />
     <None Include="Scripts\INSERT_CRITERIA_MASTER.sql" />
+    <None Include="Scripts\DELETE_SCRIPT.sql" />
   </ItemGroup>
 </Project>
