@@ -102,7 +102,7 @@
     <Build Include="Stored Procedures\usp_UpdateCompensation.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\INSERTJOBMASTER.sql" />
+    <None Include="Scripts\INSERT_JOB_MASTER.sql" />
     <None Include="Scripts\INSERT_CRITERIA_MAPPING.sql" />
     <None Include="Scripts\INSERT_CRITERIA_MASTER.sql" />
     <None Include="Scripts\DELETE_SCRIPT.sql" />
